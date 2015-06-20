@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeatherForecast</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_weather_color">Weather Color</string>
+
+    <!-- network check strings Strings -->
+    <string name="no_network">No network</string>
+    <string name="no_network_msg">Please Retry or Go to Settings or Cancel</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="tap_to_retry">Tap to Retry !</string>
+
+    <!-- toast messages -->
+    <string name="weather_update_not_fetched_lat_long">Weather updates were unavailable as latitudes and longitudes couldn\'t be fetched !</string>
+    <string name="weather_update_not_fetched_server_not_responding">Weather updates were unavailable as the server is not responding</string>
+    <string name="lat_long_not_fetched">Unable to fetch Latitude and Longitude !</string>
+
+    <!-- common constants -->
+    <string name="latitude">Latitude </string>
+    <string name="longitude">Longitude </string>
+    <string name="timezone">Time Zone </string>
+    <string name="offset">Offset </string>
+    <string name="currently">Currently</string>
+    <string name="hourly">Hourly</string>
+    <string name="hourly_summary">Summary :</string>
+    <string name="hourly_icon">Icon :</string>
+    <string name="time">Time</string>
+    <string name="summary">Summary</string>
+    <string name="icon">Icon</string>
+	<string name="precip_intensity">Precip Intensity</string>
+    <string name="precip_probability">Precip Probability</string>
+    <string name="precip_type">Precip Type</string>
+    <string name="temperature">Temperature</string>
+    <string name="apparent_temperature">Apparent Temperature</string>
+    <string name="dew_point">Dew Point</string>
+    <string name="humidity">Humidity</string>
+    <string name="nearest_storm_distance">Nearest Storm Distance</string>
+    <string name="nearest_storm_bearing">Nearest Storm Bearing</string>
+    <string name="windspeed">Wind Speed</string>
+    <string name="wind_bearing">Wind Bearing</string>
+    <string name="visibility">Visibility</string>
+    <string name="cloud_cover">Cloud Cover</string>
+    <string name="pressure">Pressure</string>
+    <string name="ozone">Ozone</string>
+
+</resources>

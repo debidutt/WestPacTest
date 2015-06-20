@@ -1,0 +1,423 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/rl_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableLayout
+                android:id="@+id/tl_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1,2,3" >
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/latitude_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/latitude" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_latitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/latitude" />
+
+                    <TextView
+                        android:id="@+id/longitude_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/longitude" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_longitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/latitude" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/timezone_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/timezone" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_timezone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/timezone" />
+
+                    <TextView
+                        android:id="@+id/offset_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/offset" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_offset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/offset" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/txt_view_heading_currently"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tl_header"
+                android:layout_marginTop="@dimen/gap_between_sections"
+                android:background="@color/black"
+                android:text="@string/currently"
+                android:textColor="@color/white" />
+
+            <TableLayout
+                android:id="@+id/tl_header_currently"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_view_heading_currently"
+                android:layout_marginTop="@dimen/gap_between_tables"
+                android:stretchColumns="0,1,2,3" >
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/time_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/time" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/time" />
+
+                    <TextView
+                        android:id="@+id/summary_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/summary" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/summary" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/icon_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/icon" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/icon" />
+
+                    <TextView
+                        android:id="@+id/precip_intensity_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/precip_intensity" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_precip_intensity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/precip_intensity" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/precip_probability_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/precip_probability" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_precip_probability"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/precip_probability" />
+
+                    <TextView
+                        android:id="@+id/precip_type_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/precip_type" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_precip_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/precip_type" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/temperature_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/temperature" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_temperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/temperature" />
+
+                    <TextView
+                        android:id="@+id/apparent_temperature_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/apparent_temperature" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_apparent_temperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/apparent_temperature" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/dew_point_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dew_point" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_dew_point"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dew_point" />
+
+                    <TextView
+                        android:id="@+id/humidity_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/humidity" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_humidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/humidity" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/nearest_storm_distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nearest_storm_distance" />
+
+                    <TextView
+                        android:id="@+id/txt_view_nearest_storm_distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nearest_storm_distance" />
+
+                    <TextView
+                        android:id="@+id/nearest_storm_bearing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nearest_storm_bearing" />
+
+                    <TextView
+                        android:id="@+id/txt_view_nearest_storm_bearing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nearest_storm_bearing" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/windspeed_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/windspeed" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_wind_speed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/windspeed" />
+
+                    <TextView
+                        android:id="@+id/wind_bearing_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/wind_bearing" />
+
+                    <TextView
+                        android:id="@+id/txt_view_wind_bearing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/wind_bearing" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/visibility_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/visibility" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_visibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/visibility" />
+
+                    <TextView
+                        android:id="@+id/cloud_cover_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cloud_cover" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_cloud_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cloud_cover" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/pressure_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pressure" />
+
+                    <TextView
+                        android:id="@+id/txt_view_fetched_pressure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pressure" />
+
+                    <TextView
+                        android:id="@+id/ozone_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ozone" />
+
+                    <TextView
+                        android:id="@+id/txt_view_ozone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ozone" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/txt_view_heading_hourly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tl_header_currently"
+                android:background="@color/black"
+                android:text="@string/hourly"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/txt_view_hourly_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_view_heading_hourly"
+                android:text="@string/hourly_summary" />
+
+            <TextView
+                android:id="@+id/txt_view_hourly_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_view_hourly_summary"
+                android:text="@string/hourly_icon" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txt_tap_to_retry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/tap_to_retry"
+        android:visibility="gone" />
+
+</FrameLayout>
