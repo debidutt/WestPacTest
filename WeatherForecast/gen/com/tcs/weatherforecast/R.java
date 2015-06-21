@@ -1166,7 +1166,6 @@ containing a value of this type.
         public static final int tl_header=0x7f05003e;
         public static final int tl_header_currently=0x7f050048;
         public static final int top_action_bar=0x7f050020;
-        public static final int txt_tap_to_retry=0x7f050070;
         public static final int txt_view_fetched_apparent_temperature=0x7f050058;
         public static final int txt_view_fetched_cloud_cover=0x7f050068;
         public static final int txt_view_fetched_dew_point=0x7f05005a;
@@ -1192,6 +1191,7 @@ containing a value of this type.
         public static final int txt_view_nearest_storm_bearing=0x7f050060;
         public static final int txt_view_nearest_storm_distance=0x7f05005e;
         public static final int txt_view_ozone=0x7f05006c;
+        public static final int txt_view_tap_to_retry=0x7f050070;
         public static final int txt_view_wind_bearing=0x7f050064;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;

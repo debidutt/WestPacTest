@@ -9,9 +9,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -19,6 +16,7 @@ import android.net.ConnectivityManager;
 public class Utilities {
 
 	private Context mContext;
+	
 
 	public Utilities(Context context) {
 		this.mContext = context;
@@ -27,7 +25,7 @@ public class Utilities {
 	/**
 	 * This function is used to check if the device is online
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isNetworkOnline() {
 		;
@@ -42,7 +40,16 @@ public class Utilities {
 			return false;
 		}
 	}
+	
+	
 
+	/**
+	 * This function is used to convert a UNIX millisecond value calculated since 1970 
+	 * to HH : mm a format
+	 * @param unixSeconds
+	 * @return
+	 */
+	
 	@SuppressLint("SimpleDateFormat")
 	public String UnixToActual(Long unixSeconds) {
 
@@ -53,6 +60,18 @@ public class Utilities {
 
 		return formattedDate;
 	}
+	
+	
+	
+	/**
+	 * This function is used to iterate weather hashmap and check if the key value of weather hashmap 
+	 * is same as the value passed by icon. if found return value is the color code associated 
+	 * with the weather hashmap key
+	 * 
+	 * @param weather
+	 * @param icon
+	 * @return
+	 */
 
 	public String iterationAndCompare(HashMap<String, String> weather,
 			String icon) {
@@ -72,23 +91,6 @@ public class Utilities {
 
 		return colorCode;
 	}
+	
 
-	public String checkJsonNoValue(JSONObject jsonObject, String tag,
-			String dataType) {
-
-		String returnValue = "";
-
-		if (jsonObject.has(tag)) {
-			try {
-				returnValue = jsonObject.getString(tag);
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else {
-			returnValue = "No Tags for " + tag;
-		}
-
-		return returnValue;
-	}
 }

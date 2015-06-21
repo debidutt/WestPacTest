@@ -1,5 +1,5 @@
 /*
- * This class is used to perform http post operations for fetching data from server
+ * This class is used to perform http get operations for fetching data from server
  */
 
 package com.tcs.weatherforecast.controller;
@@ -11,54 +11,45 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
-import java.util.ArrayList;
 import java.util.zip.GZIPInputStream;
 
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.content.Context;
-import android.util.Log;
-import android.widget.HeterogeneousExpandableList;
 
 import com.tcs.weatherforecast.utility.WeatherForecastConstants;
 
 public class WebserviceInteraction {
 
-	private static final int CONN_TIMEOUT = 60000;
-	private static final int SO_TIMEOUT = 60000;
 
 	public String WebserviceInteractionService(Context context, String request) {
 		String strResult = null;
 		try {
 
-			Log.d("Request", WeatherForecastConstants.weatherForecastUrl
-					+ request);
-
 			HttpGet httpget = new HttpGet(
 					WeatherForecastConstants.weatherForecastUrl + request);
-
+			
+			/**
+			 * Adding gzip tag to header so as to get response in a gzip format
+			 * which reduces the payload drastically
+			 */
+			
 			httpget.setHeader("Accept-Encoding", "gzip");
 
 			HttpParams httpParameters = new BasicHttpParams();
 
 			HttpConnectionParams.setConnectionTimeout(httpParameters,
-					CONN_TIMEOUT);
-			HttpConnectionParams.setSoTimeout(httpParameters, SO_TIMEOUT);
+					WeatherForecastConstants.CONN_TIMEOUT);
+			HttpConnectionParams.setSoTimeout(httpParameters, WeatherForecastConstants.SO_TIMEOUT);
 			HttpClient httpclient = new DefaultHttpClient(httpParameters);
 
 			HttpResponse httpResponse = httpclient.execute(httpget);

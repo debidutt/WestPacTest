@@ -321,7 +321,6 @@ int id title 0x7f05002b
 int id tl_header 0x7f05003e
 int id tl_header_currently 0x7f050048
 int id top_action_bar 0x7f050020
-int id txt_tap_to_retry 0x7f050070
 int id txt_view_fetched_apparent_temperature 0x7f050058
 int id txt_view_fetched_cloud_cover 0x7f050068
 int id txt_view_fetched_dew_point 0x7f05005a
@@ -347,6 +346,7 @@ int id txt_view_hourly_summary 0x7f05006e
 int id txt_view_nearest_storm_bearing 0x7f050060
 int id txt_view_nearest_storm_distance 0x7f05005e
 int id txt_view_ozone 0x7f05006c
+int id txt_view_tap_to_retry 0x7f050070
 int id txt_view_wind_bearing 0x7f050064
 int id up 0x7f050021
 int id useLogo 0x7f050003

@@ -3,8 +3,6 @@ package com.tcs.weatherforecast.business;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 public class DataDto {
 	private long time;
 	private String summary;

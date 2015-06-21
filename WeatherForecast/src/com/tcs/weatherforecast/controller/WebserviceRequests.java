@@ -1,5 +1,5 @@
 /*
- * This class is used to create request jsons to post to server
+ * This class is used to create request get to server
  */
 
 package com.tcs.weatherforecast.controller;
@@ -22,7 +22,7 @@ public class WebserviceRequests {
 	
 		String request = "/"+latitude+","+longitude;
 		
-		Log.d("Calling", "getWeatherForecastData method");
+		// Making a web service interaction call
 		
 		String strResult = new WebserviceInteraction().WebserviceInteractionService(mContext, request);
 		
